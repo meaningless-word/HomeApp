@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Xamarin.Forms;
 
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace a
+namespace HomeApp.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RegisterPage_xaml : ContentPage
+    public partial class RegisterPage : ContentPage
     {
-        public RegisterPage_xaml()
+        public RegisterPage()
         {
             InitializeComponent();
         }
