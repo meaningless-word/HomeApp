@@ -9,7 +9,7 @@ namespace HomeApp
 		{
 			InitializeComponent();
 
-			MainPage = new ClimatePage(); //DevicesPage(); //LoginPage(); //SpanPage(); //LoadingPage(); //MainPage();
+			MainPage = new GridXamledPage(); //GridPage(); //AboutPage(); //ClimatePage(); //DevicesPage(); //LoginPage(); //SpanPage(); //LoadingPage(); //MainPage();
 		}
 
 		protected override void OnStart()

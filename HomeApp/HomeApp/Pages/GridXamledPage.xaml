@@ -3,11 +3,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeApp.Pages.GridXamledPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Hello, world!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <BoxView Color="LightBlue" Grid.Column="0" Grid.Row="0"/>
+        <BoxView Color="Blue" Grid.Column="1" Grid.Row="0"/>
+        <BoxView Color="DarkBlue" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"/>
+    </Grid>
 </ContentPage>

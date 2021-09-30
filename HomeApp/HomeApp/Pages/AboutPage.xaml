@@ -3,11 +3,69 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeApp.Pages.AboutPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Hello, world!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+<RelativeLayout x:Name="container">
+    <BoxView x:Name="boxView1" 
+             WidthRequest="50" 
+             HeightRequest="50" 
+             Color="Blue"
+             RelativeLayout.XConstraint="{
+             ConstraintExpression Type=RelativeToParent,
+             Property=Width,
+             Factor=0.5,
+             Constant=-25
+             }"
+             RelativeLayout.YConstraint="{
+             ConstraintExpression Type=RelativeToParent,
+             Property=Height,
+             Factor=0.5,
+             Constant=-25
+             }"
+             />
+    <!--
+    Здесь мы задали ширину и высоту элемента BoxView 50х50, 
+    с отступом по горизонтали (x), равную половине ширины родительского элемента (Property=Width, Factor=0.5).
+    Затем мы задаем отступ в -25, так как ширина BoxView составляет 50, 
+    и таким образом мы выровняем элемент по центру по горизонтали.
+    Аналогично по вертикали
+    -->
+    
+    <BoxView x:Name="boxView2"
+             WidthRequest="50"
+             HeightRequest="50"
+             Color="DarkBlue"
+             RelativeLayout.XConstraint="{
+             ConstraintExpression ElementName=boxView1,
+             Type=RelativeToView,
+             Constant=-100,
+             Property=X
+             }" 
+             RelativeLayout.YConstraint="{
+             ConstraintExpression Type=RelativeToView,
+             ElementName=boxView1,
+             Property=Y,
+             Constant=0
+             }"
+             />
+    <BoxView x:Name="boxView3"
+             WidthRequest="50"
+             HeightRequest="50"
+             Color="LightBlue"
+             RelativeLayout.XConstraint="{
+             ConstraintExpression ElementName=boxView1,
+             Type=RelativeToView,
+             Constant=100,
+             Property=X
+             }"
+             RelativeLayout.YConstraint="{
+             ConstraintExpression Type=RelativeToView,
+             ElementName=boxView1,
+             Property=Y,
+             Constant=0}" 
+             />
+</RelativeLayout>
 </ContentPage>
+<!--
+RelativeLayout предоставляет нам удобный способ расположить элементы относительно других
+без привязки к конкретным значениям. В итоге мы получаем преимущество в виде одинакового
+интерфейса на разных устройствах, экраны которых могут иметь разные параметры.
+-->

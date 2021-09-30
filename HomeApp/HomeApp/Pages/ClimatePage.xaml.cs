@@ -104,7 +104,8 @@ namespace HomeApp.Pages
 
         public void GetAbsRect()
         {
-            var pressureBox = new BoxView { Color = Color.BurlyWood };
+            // Если мы хотим использовать относительные значения, следует иметь в виду, что все они находятся в диапазоне от 0 до 1.
+            var pressureBox = new BoxView { Color = Color.Coral };
             var position = new Rectangle(0.5, 0.5, 0.25, 0.5);
             AbsoluteLayout.SetLayoutBounds(pressureBox, position);
             AbsoluteLayout.SetLayoutFlags(pressureBox, AbsoluteLayoutFlags.All);
