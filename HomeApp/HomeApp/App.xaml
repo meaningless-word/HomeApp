@@ -2,7 +2,10 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeApp.App">
-    <Application.Resources>
-
-    </Application.Resources>
+  <Application.Resources>
+    <!--Здесь задаются ресурся для всего приложения-->
+    <ResourceDictionary>
+      <Color x:Key="errorColor">#FF0000</Color>
+    </ResourceDictionary>
+  </Application.Resources>
 </Application>
