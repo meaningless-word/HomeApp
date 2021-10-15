@@ -6,6 +6,44 @@
     <!--Здесь задаются ресурся для всего приложения-->
     <ResourceDictionary>
       <Color x:Key="errorColor">#FF0000</Color>
+      <!--Чтобы придать единое оформление к примеру, всем кнопкам, нужно определить стиль-->
+      <Style TargetType="Button">
+        <Setter Property="CornerRadius" Value="15"/>
+        <Setter Property="Opacity" Value="0.8"/>
+        <!--Триггерные стили служат для того, чтобы менять визуальное представление элементов при наступлении какого-либо события-->
+        <Style.Triggers>
+          <Trigger Property="IsPressed" Value="True" TargetType="Button">
+            <Setter Property="TextColor" Value="LightBlue"/>
+          </Trigger>
+        </Style.Triggers>
+      </Style>
+      <!--Блок создания собственных состояний помимо стандартных: Normal, Focused, Disable-->
+      <Style TargetType="Entry" x:Key="ValidInputStyle">
+        <Setter Property="VisualStateManager.VisualStateGroups">
+          <VisualStateGroupList>
+            <VisualStateGroup x:Name="ValidStates">
+              <!--добавляется собственное состояние Valid-->
+              <VisualState x:Name="Valid">
+                <VisualState.Setters>
+                  <Setter Property="TextColor" Value="CornflowerBlue"/>
+                </VisualState.Setters>
+              </VisualState>
+              <!--добавляется собственное состояние Invalid-->
+              <VisualState x:Name="Invalid">
+                <VisualState.Setters>
+                  <Setter Property="TextColor" Value="IndianRed"/>
+                </VisualState.Setters>
+              </VisualState>
+              <!--добавлено стандартное состояние для придания ему оформления-->
+              <VisualState x:Name="Disabled">
+                <VisualState.Setters>
+                  <Setter Property="BackgroundColor" Value="LightCyan"/>
+                </VisualState.Setters>
+              </VisualState>
+            </VisualStateGroup>
+          </VisualStateGroupList>
+        </Setter>
+      </Style>
     </ResourceDictionary>
   </Application.Resources>
 </Application>

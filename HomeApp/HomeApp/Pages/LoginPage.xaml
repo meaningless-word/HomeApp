@@ -18,10 +18,14 @@
              VerticalTextAlignment="Center"
              HorizontalTextAlignment="Center"
              TextColor="{local:RgbExtension Red=255, Green=0, Blue=0}" />
+      <!--<Button x:Name="loginButton"
+              Text="{x:Static local:Pages.LoginPage.BUTTON_TEXT}"
+              Clicked="Login_Click"
+              CornerRadius="{local:ButtonViewExtension ButtonStyle=Round}" />-->
       <Button x:Name="loginButton"
               Text="{x:Static local:Pages.LoginPage.BUTTON_TEXT}"
               Clicked="Login_Click"
-              CornerRadius="{local:ButtonViewExtension ButtonStyle=Round}" />
+              Style="{StaticResource buttonStyle}" />
       <Label x:Name="infoCounter"
              FontSize="{DynamicResource Key=growingFont}"
              TextColor="{DynamicResource Key=growingColor}"

@@ -9,7 +9,7 @@ namespace HomeApp
 		{
 			InitializeComponent();
 
-			MainPage = new /*GridXamledPage();*/ /*GridPage();*/ /*AboutPage();*/ /*ClimatePage();*/ /*DevicesPage();*/ LoginPage(); /*SpanPage();*/ /*LoadingPage();*/ /*MainPage();*/
+			MainPage = new NewDevicePage(); /*DeviceControlPage();*/ /*RegisterPage();*/ /*GridXamledPage();*/ /*GridPage();*/ /*AboutPage();*/ /*ClimatePage();*/ /*DevicesPage();*/ /*LoginPage();*/ /*SpanPage();*/ /*LoadingPage();*/ /*MainPage();*/
 		}
 
 		protected override void OnStart()
