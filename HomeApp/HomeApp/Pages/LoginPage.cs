@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace HomeApp.Pages
 {
@@ -34,7 +34,7 @@ namespace HomeApp.Pages
 		/// <summary>
 		/// По клику обрабатываем счётчик и выводим на экран разные сообщения
 		/// </summary>
-		private void Login_Click(object sender, EventArgs e)
+		private async void Login_Click(object sender, EventArgs e)
 		{
 			//loginButton.Text = "Выполняется вход...";
 			/*
@@ -47,6 +47,14 @@ namespace HomeApp.Pages
 			{
 				// Если первая попытка - просто меняем сообщения
 				loginButton.Text = $"Выполняется вход";
+				// Имитация задержки (приложение загрудает данные с сервера)
+				await Task.Delay(150);
+
+				// Переход на следующую страницу
+				await Navigation.PushAsync(new DeviceGroupListPage());
+
+				// Восстановим первоначальный текст на кнопке (на случай, если пользователь вернется на этот экран чтобы выполнить вход снова)
+				loginButton.Text = BUTTON_TEXT;
 			}
 			else if (loginCounter > 5) // Слишком много попыток - показываем ошибку
 			{

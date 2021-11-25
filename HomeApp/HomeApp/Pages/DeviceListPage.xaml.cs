@@ -1,14 +1,13 @@
+using HomeApp.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using HomeApp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace HomeApp.Pages
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+	[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DeviceListPage : ContentPage
     {
         // усложним задачу - будем использовать список моделей

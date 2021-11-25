@@ -14,7 +14,12 @@ namespace HomeApp.Pages
         /// Группируемая коллекция
         /// </summary>
         public ObservableCollection<Group<string, HomeDevice>> DeviceGroups { get; set; } = new ObservableCollection<Group<string, HomeDevice>>();
-        
+
+        /// <summary>
+        /// Ссылка на выбранный объект
+        /// </summary>
+        HomeDevice SelectedDevice;
+
         public DeviceGroupListPage()
         {
             InitializeComponent();
@@ -33,5 +38,46 @@ namespace HomeApp.Pages
             DeviceGroups = new ObservableCollection<Group<string, HomeDevice>>(devicesByRooms);
             BindingContext = this;
         }
-    }
+
+		private async void NewDeviceButton_Clicked(object sender, System.EventArgs e)
+		{
+            // Переход на следующую страницу - страницу нового устройства (и помещение её в стек навигации)
+            await Navigation.PushAsync(new NewDevicePage());
+        }
+
+		private async void LogoutButton_Clicked(object sender, System.EventArgs e)
+		{
+            // Возврат на первую страницу стека навигации (корневую страницу приложения) - экран логина
+            await Navigation.PopAsync();
+        }
+
+		private async void EditDeviceButton_Clicked(object sender, System.EventArgs e)
+		{
+            // проверяем, выбрал ли пользователь устройство из списка
+            if (SelectedDevice == null)
+            {
+                await DisplayAlert(null, $"Пожалуйста, выберите устройство!", "OK");
+                return;
+            }
+
+            // Переход на следующую страницу - страницу нового устройства (и помещение её в стек навигации)
+            await Navigation.PushModalAsync(new EditDevicePage("Изменить устройство", SelectedDevice));
+
+            // Данные вроде бы сохранились, но обновления информации о стиральной машине в общем списке не происходит.
+            // Это связано с тем, что наша модель не реализует интерфейс INotifyPropertyChanged,
+            // который позволяет зависимым визуальным элементам автоматически реагировать на изменения модели.
+            // Для добавления поддержки автоматического обновления, изменим код модели HomeDevice.cs
+        }
+
+        /// <summary>
+        /// Обработчик выбора
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+		private void deviceList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+		{
+            // распаковка модели из объекта
+            SelectedDevice = (HomeDevice)e.SelectedItem;
+        }
+	}
 }

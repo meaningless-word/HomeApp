@@ -1,33 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HomeApp.Pages.DeviceGroupListPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="HomeApp - Ваши устройства" 
-                   HorizontalOptions="Center" 
-                   FontSize="Large"  
-                   Padding="30,10,30,10" 
-                   StyleId="header" />
-            <ListView x:Name="deviceList"
-                      HasUnevenRows="True"
-                      GroupDisplayBinding="{Binding Name}"
-                      ItemsSource="{Binding DeviceGroups}"
-                      IsGroupingEnabled="True"
-                      SeparatorVisibility="Default"
-                      RowHeight="60">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell
-                            Text="{Binding Name}"
-                            Detail="{Binding Description}"
-                            TextColor="DodgerBlue"
-                            DetailColor="Gray"
-                        />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="HomeApp.Pages.DeviceGroupListPage"
+             NavigationPage.HasNavigationBar="False">
+  <ContentPage.Content>
+    <StackLayout>
+      <Label Text="HomeApp - Ваши устройства" 
+              HorizontalOptions="Center" 
+              FontSize="Large"  
+              Padding="30,10,30,10" 
+              StyleId="header" />
+      <ListView x:Name="deviceList"
+                HasUnevenRows="True"
+                GroupDisplayBinding="{Binding Name}"
+                ItemsSource="{Binding DeviceGroups}"
+                IsGroupingEnabled="True"
+                SeparatorVisibility="Default"
+                RowHeight="60"
+                CachingStrategy="RecycleElement"
+                ItemSelected="deviceList_ItemSelected">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <TextCell Text="{Binding Name}"
+                      Detail="{Binding Description}"
+                      TextColor="DodgerBlue"
+                      DetailColor="Gray" />
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+      <Grid ColumnDefinitions="Auto" RowDefinitions="45" Margin="10, 15">
+        <Button Text="Новое устройство" Clicked="NewDeviceButton_Clicked" Grid.Column="0" HorizontalOptions="FillAndExpand"/>
+        <Button Text="Изменить" Clicked="EditDeviceButton_Clicked" Grid.Column="1" HorizontalOptions="FillAndExpand"/>
+        <Button Text="Выход" Clicked="LogoutButton_Clicked" Grid.Column="2" HorizontalOptions="FillAndExpand"/>
+      </Grid>
+    </StackLayout>
+  </ContentPage.Content>
 </ContentPage>

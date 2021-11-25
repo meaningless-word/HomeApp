@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="HomeApp.Pages.NewDevicePage">
+             x:Class="HomeApp.Pages.NewDevicePage"
+             Title="Новое устройство">
   <ContentPage.Content>
     <StackLayout x:Name="stackLayout" BackgroundColor="LightGray">
-      <Label Text="НомеApp - Новое устройство"
+      <!--<Label Text="НомеApp - Новое устройство"
              HorizontalOptions="CenterAndExpand"
              FontSize="Title"
-             Padding="30,10,30,10" />
+             Padding="30,10,30,10" />-->
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>
