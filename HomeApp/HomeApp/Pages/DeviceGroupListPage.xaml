@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomeApp.Pages.DeviceGroupListPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="HomeApp - Ваши устройства" 
+                   HorizontalOptions="Center" 
+                   FontSize="Large"  
+                   Padding="30,10,30,10" 
+                   StyleId="header" />
+            <ListView x:Name="deviceList"
+                      HasUnevenRows="True"
+                      GroupDisplayBinding="{Binding Name}"
+                      ItemsSource="{Binding DeviceGroups}"
+                      IsGroupingEnabled="True"
+                      SeparatorVisibility="Default"
+                      RowHeight="60">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell
+                            Text="{Binding Name}"
+                            Detail="{Binding Description}"
+                            TextColor="DodgerBlue"
+                            DetailColor="Gray"
+                        />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

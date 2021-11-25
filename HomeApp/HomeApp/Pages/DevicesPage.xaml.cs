@@ -39,28 +39,27 @@ namespace HomeApp.Pages
                 "Музыкальный центр",
                 "Компьютер",
                 "Игровая консоль"
-
             };
             */
 
             var homeDevices = new List<HomeDevice>();
 
             // Заполняем список устройств
-            homeDevices.Add(new HomeDevice("Чайник", "kettle.jpg"));
-            homeDevices.Add(new HomeDevice("Стиральная машина"));
-            homeDevices.Add(new HomeDevice("Посудомоечная машина"));
-            homeDevices.Add(new HomeDevice("Мультиварка"));
-            homeDevices.Add(new HomeDevice("Водонагреватель"));
-            homeDevices.Add(new HomeDevice("Плита"));
-            homeDevices.Add(new HomeDevice("Микроволновая печь"));
-            homeDevices.Add(new HomeDevice("Духовой шкаф"));
-            homeDevices.Add(new HomeDevice("Холодильник"));
-            homeDevices.Add(new HomeDevice("Увлажнитель воздуха"));
-            homeDevices.Add(new HomeDevice("Телевизор"));
-            homeDevices.Add(new HomeDevice("Пылесос"));
-            homeDevices.Add(new HomeDevice("музыкальный центр"));
-            homeDevices.Add(new HomeDevice("Компьютер"));
-            homeDevices.Add(new HomeDevice("Игровая консоль"));
+            homeDevices.Add(new HomeDevice(name: "Чайник", description: null, image:"kettle.jpg"));
+            homeDevices.Add(new HomeDevice(name:"Стиральная машина"));
+            homeDevices.Add(new HomeDevice(name:"Посудомоечная машина"));
+            homeDevices.Add(new HomeDevice(name:"Мультиварка"));
+            homeDevices.Add(new HomeDevice(name:"Водонагреватель"));
+            homeDevices.Add(new HomeDevice(name:"Плита"));
+            homeDevices.Add(new HomeDevice(name:"Микроволновая печь"));
+            homeDevices.Add(new HomeDevice(name:"Духовой шкаф"));
+            homeDevices.Add(new HomeDevice(name:"Холодильник"));
+            homeDevices.Add(new HomeDevice(name:"Увлажнитель воздуха"));
+            homeDevices.Add(new HomeDevice(name:"Телевизор"));
+            homeDevices.Add(new HomeDevice(name:"Пылесос"));
+            homeDevices.Add(new HomeDevice(name:"музыкальный центр"));
+            homeDevices.Add(new HomeDevice(name:"Компьютер"));
+            homeDevices.Add(new HomeDevice(name:"Игровая консоль"));
 
             // Создадим новый стек
             var innerStack = new StackLayout();

@@ -9,23 +9,23 @@ namespace HomeApp
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new LoginPage()); // прицепляем навигацию
-			/*DeviceGroupListPage();*/
-			/*DeviceListPage();*/
-			/*BindingModePage();*/
-			/*BindingPage();*/
-			/*NewDevicePage();*/
+<<<<<<< HEAD
+			MainPage = new 
+			NewDevicePage();	
 			/*DeviceControlPage();*/
 			/*RegisterPage();*/
 			/*GridXamledPage();*/
 			/*GridPage();*/
 			/*AboutPage();*/
-			/*ClimatePage();*/
+			/*ClimatePage();*/ 
 			/*DevicesPage();*/
 			/*LoginPage();*/
-			/*SpanPage();*/
+			/*SpanPage();*/ 
 			/*LoadingPage();*/
 			/*MainPage();*/
+=======
+			MainPage = new BindingModePage(); /*BindingPage();*/ /*NewDevicePage();*/ /*DeviceControlPage();*/ /*RegisterPage();*/ /*GridXamledPage();*/ /*GridPage();*/ /*AboutPage();*/ /*ClimatePage();*/ /*DevicesPage();*/ /*LoginPage();*/ /*SpanPage();*/ /*LoadingPage();*/ /*MainPage();*/
+>>>>>>> 743c763d711e9041de94991c8f8c1886ef2dec5c
 		}
 
 		protected override void OnStart()
