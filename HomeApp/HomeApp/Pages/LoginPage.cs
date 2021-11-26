@@ -103,6 +103,7 @@ namespace HomeApp.Pages
                 // Показывваем текстовое сообщение об ошибке
                 errorMessage.Text = "Слишком много попыток! Попробуйте позже.";
                 */
+				loginCounter = -1;
 			}
 			else
 			{
@@ -119,7 +120,7 @@ namespace HomeApp.Pages
 			}
 
 			// Увеличиваем счетчик
-			loginCounter += 1;
+			loginCounter++;
 		}
 	}
 }

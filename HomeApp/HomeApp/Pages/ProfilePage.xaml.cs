@@ -1,6 +1,7 @@
 using Xamarin.Forms;
 using HomeApp.Models;
- 
+using Xamarin.Essentials;
+
 namespace HomeApp.Pages
 {
     public partial class ProfilePage : ContentPage
@@ -33,7 +34,13 @@ namespace HomeApp.Pages
                 UserInfo = new UserInfo();
                 App.Current.Properties.Add("CurrentUser", UserInfo);
             }
- 
+
+            // Получим значения ползунков из Preferences.
+            // Если значений нет - установим значения по умолчанию (false)
+            gasSwitch.On = Preferences.Get("gasState", false);
+            climateSwitch.On = Preferences.Get("climateState", false);
+            electroSwitch.On = Preferences.Get("electroState", false);
+
             base.OnAppearing();
         }
  
