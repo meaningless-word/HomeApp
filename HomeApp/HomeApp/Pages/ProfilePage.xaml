@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomeApp.Pages.ProfilePage"
+             Title="Ваш профиль">
+    <ContentPage.Content>
+        <StackLayout>
+            <TableView x:Name="userDataTable">
+                <TableView.Root>
+                    <TableRoot>
+                        <TableSection Title="Данные пользователя">
+                            <EntryCell x:Name="loginEntry" Label="Имя" Keyboard="Default" />
+                            <EntryCell x:Name="emailEntry" Label="E-mail" Keyboard="Default" />
+                        </TableSection>
+                        <TableSection Title="Настройки доступа">
+                            <SwitchCell x:Name="gasSwitch" Text="управление газом" OnChanged="NotifyUser"
+                                        OnColor="RoyalBlue" />
+                            <SwitchCell x:Name="climateSwitch" Text="управление климатом" OnChanged="NotifyUser"
+                                        OnColor="RoyalBlue" />
+                            <SwitchCell x:Name="electroSwitch" Text="электропитание" OnChanged="NotifyUser"
+                                        OnColor="RoyalBlue" />
+                        </TableSection>
+                    </TableRoot>
+                </TableView.Root>
+            </TableView>
+            <Button x:Name="saveButton" Clicked="saveButton_Clicked" Text="Сохранить" Margin="10" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

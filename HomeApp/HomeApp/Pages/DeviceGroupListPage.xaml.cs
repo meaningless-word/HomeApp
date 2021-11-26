@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -79,5 +80,10 @@ namespace HomeApp.Pages
             // распаковка модели из объекта
             SelectedDevice = (HomeDevice)e.SelectedItem;
         }
-	}
+
+        private async void UserProfileButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProfilePage());
+        }
+    }
 }
